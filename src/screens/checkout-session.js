@@ -19,11 +19,12 @@ export default function CheckoutSession() {
   return (
     <View style={styles.container}>
       <Header />
-      <Image
+      {/* <Image
         style={styles.background}
         resizeMode="cover"
         source={DisneyPlusBackgroundRadialGradient}
-      />
+      /> */}
+      <DisneyPlusBackgroundRadialGradient style={styles.background} />
       <Text style={styles.title}>
         Conclua a sua assinatura no seu navegador
       </Text>

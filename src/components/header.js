@@ -1,5 +1,5 @@
-import {useNavigation} from '@react-navigation/native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {View, Image, Pressable, StyleSheet} from 'react-native';
 
 export function Header() {

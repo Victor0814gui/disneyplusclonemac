@@ -8,6 +8,7 @@ export function ButtonDefault({
   hoveredColor = '#0072d2',
   labelColor = '#9cb1cc',
   labelHoveredColor = '#f6f7f9',
+  ...rest
 }) {
   const animatedButtonCheckin = useRef(
     new Animated.ValueXY({
@@ -53,7 +54,7 @@ export function ButtonDefault({
   };
 
   return (
-    <Pressable onPressIn={onPressIn} onPressOut={animatedMouseLeave}>
+    <Pressable {...rest} onPressIn={onPressIn} onPressOut={animatedMouseLeave}>
       <Animated.View
         accessibilityRole="button"
         onMouseEnter={animateMouseEnter}

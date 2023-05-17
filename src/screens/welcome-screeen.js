@@ -39,11 +39,12 @@ export function WelcomeScreen({navigation}) {
         style={[styles.backgroundImage, {transform: [{scale: animationValue}]}]}
       />
       <View style={styles.content}>
-        <Image
+        {/* <Image
           style={[styles.logo]}
           resizeMode="contain"
           source={DisneyPlusLogoSvg}
-        />
+        /> */}
+        <DisneyPlusLogoSvg style={[styles.logo]} />
         <Text style={styles.subtitle}>
           As melhores historias {'\n'}em um só lugar
         </Text>

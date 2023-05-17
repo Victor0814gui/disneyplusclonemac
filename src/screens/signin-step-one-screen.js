@@ -30,11 +30,13 @@ export function SignInStepOne({navigation}) {
     <Animated.View
       style={[styles.container, {transform: [{scale: animationScreen}]}]}>
       <Header />
-      <Image
+      {/* <Image
         style={styles.logo}
         resizeMode="contain"
         source={DisneyPlusLogoSvg}
-      />
+      /> */}
+      <DisneyPlusLogoSvg style={[styles.logo]} />
+
       <Text style={styles.title}>Use o seu e-mail para entrar</Text>
       <Text style={styles.subtitle}>
         Você usara esse email e senha para entrar na conta do Disney+ e assitir

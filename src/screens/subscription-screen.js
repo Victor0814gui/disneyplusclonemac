@@ -15,31 +15,35 @@ import {ButtonCheckin} from '../components/button-checkin';
 import {ButtonDefault} from '../components/button-default';
 import DisneyPlusLogoSvg from '../assets/original.svg';
 import DisneyPlusBackgroundImage from '../assets/subscription-background-image.png';
-import { Header } from '../components/header';
+import {Header} from '../components/header';
 
-export function SubsriptionScreen() {
+export function SubsriptionScreen({navigation}) {
   return (
     <View style={styles.container}>
       <Header />
-
       <Image
         source={DisneyPlusBackgroundImage}
         resizeMode="cover"
         style={styles.backgroundImage}
       />
       <View style={styles.content}>
-        <Image
+        {/* <Image
           style={styles.logo}
           resizeMode="contain"
           source={DisneyPlusLogoSvg}
-        />
+        /> */}
+        <DisneyPlusLogoSvg style={[styles.logo]} />
+
         <Text style={styles.title}>
           Oi de novo! Parece que você não {'\n'}é assinante
         </Text>
         <Text style={styles.subtitle}>
           Você cancelou ou não renovou a assinatura?
         </Text>
-        <ButtonDefault label="REATIVAR ASSINATURA" />
+        <ButtonDefault
+          label="REATIVAR ASSINATURA"
+          onPress={() => navigation.navigate('WelcomeScreen')}
+        />
         <View
           style={{
             marginTop: 81,
