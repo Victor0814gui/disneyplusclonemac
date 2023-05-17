@@ -7,9 +7,12 @@ import {Input} from '../components/input';
 import {ButtonCheckin} from '../components/button-checkin';
 import DisneyPlusBackgroundRadialGradient from '../assets/background-radial-gradient.svg';
 import {Header} from '../components/header';
+import Svg, {Defs, Path, Circle, RadialGradient, Stop} from 'react-native-svg';
+import {useWindowDimensions} from 'react-native-windows';
 
 export default function CheckoutSession() {
   const [URLIsOpen, setURLIsOpen] = useState(false);
+  const {height, width} = useWindowDimensions();
   useEffect(() => {
     if (!URLIsOpen) {
       Linking.openURL('https://www.disneyplus.com/');
@@ -18,7 +21,7 @@ export default function CheckoutSession() {
   }, []);
   return (
     <View style={styles.container}>
-      <Header />
+      {/* <Header /> */}
       {/* <Image
         style={styles.background}
         resizeMode="cover"
