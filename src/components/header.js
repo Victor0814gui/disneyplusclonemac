@@ -2,19 +2,27 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {View, Image, Pressable, StyleSheet} from 'react-native';
 
+import ArrowBackSvg from '../assets/arrow-back.svg';
+
 export function Header() {
   const navigation = useNavigation();
   return (
     <View style={styles.header}>
       <Pressable onPress={() => navigation.goBack()}>
-        <Image
+        <ArrowBackSvg
+          style={{
+            width: 30,
+            height: 30,
+          }}
+        />
+        {/* <Image
           source={require('../assets/arrow-back.svg')}
           resizeMode="contain"
           style={{
             width: 30,
             height: 30,
           }}
-        />
+        /> */}
       </Pressable>
     </View>
   );

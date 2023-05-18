@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 
 import {View, Text, Image, Pressable, Animated, StyleSheet} from 'react-native';
 
@@ -8,8 +8,24 @@ import {ButtonCheckin} from '../components/button-checkin';
 import {Header} from '../components/header';
 
 export function SignInStepTwo({navigation}) {
+  const [setText, text] = useState('');
+  const animationScreen = useRef(new Animated.Value(0.8)).current;
+
+  const animationEnter = () => {
+    Animated.timing(animationScreen, {
+      toValue: 1,
+      duration: 230,
+      useNativeDriver: false,
+    }).start();
+  };
+
+  useEffect(() => {
+    animationEnter();
+  }, []);
+
   return (
-    <View style={styles.container}>
+    <Animated.View
+      style={[styles.container, {transform: [{scale: animationScreen}]}]}>
       <Header />
 
       {/* <Image
@@ -43,7 +59,7 @@ export function SignInStepTwo({navigation}) {
           onPress={() => navigation.navigate('SubsriptionScreen')}
         />
       </View>
-    </View>
+    </Animated.View>
   );
 }
 

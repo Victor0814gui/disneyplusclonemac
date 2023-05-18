@@ -15,7 +15,6 @@ import {ButtonCheckin} from '../components/button-checkin';
 import DisneyPlusLogoSvg from '../assets/original.svg';
 import DisneyPlusBackgroundImage from '../assets/background-image-disneyplus.jpg';
 import DisneySubsidiaresLogo from '../assets/logos.png';
-import {transform} from '@babel/core';
 
 export function WelcomeScreen({navigation}) {
   const animationValue = useRef(new Animated.Value(1.1)).current;

@@ -20,7 +20,7 @@ import {Header} from '../components/header';
 export function SubsriptionScreen({navigation}) {
   return (
     <View style={styles.container}>
-      <Header />
+      {/* <Header /> */}
       <Image
         source={DisneyPlusBackgroundImage}
         resizeMode="cover"
