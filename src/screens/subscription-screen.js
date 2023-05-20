@@ -1,21 +1,10 @@
 import React, {useRef, useState} from 'react';
 
-import {
-  View,
-  Text,
-  Image,
-  Pressable,
-  Animated,
-  StyleSheet,
-  TouchableHighlight,
-  ImageBackground,
-} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 
-import {ButtonCheckin} from '../components/button-checkin';
 import {ButtonDefault} from '../components/button-default';
 import DisneyPlusLogoSvg from '../assets/original.svg';
 import DisneyPlusBackgroundImage from '../assets/subscription-background-image.png';
-import {Header} from '../components/header';
 
 export function SubsriptionScreen({navigation}) {
   return (
@@ -33,7 +22,6 @@ export function SubsriptionScreen({navigation}) {
           source={DisneyPlusLogoSvg}
         /> */}
         <DisneyPlusLogoSvg style={[styles.logo]} />
-
         <Text style={styles.title}>
           Oi de novo! Parece que você não {'\n'}é assinante
         </Text>

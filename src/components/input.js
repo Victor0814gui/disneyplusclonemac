@@ -1,5 +1,8 @@
 import React from 'react';
 import {View, TextInput, StyleSheet} from 'react-native';
+import EyeSvg from '../assets/eye.svg';
+
+import {ButtonCircularDefault} from './button-circular-default';
 
 export function Input({inputDataSecret = false, ...rest}) {
   return (
@@ -19,7 +22,15 @@ export function Input({inputDataSecret = false, ...rest}) {
         textAlign="center"
         secureTextEntry={inputDataSecret}
       />
-      {inputDataSecret && <View style={styles.containerIcon}></View>}
+      {inputDataSecret && (
+        <ButtonCircularDefault
+          defaultColor="#40424a"
+          hoveredColor="#f9f9f9"
+          labelColor="#c6c6c7"
+          labelHoveredColor="#171717">
+          <EyeSvg fill={'#cacaca'} style={styles.icon} />
+        </ButtonCircularDefault>
+      )}
     </View>
   );
 }
@@ -35,6 +46,7 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     borderColor: '#f0eeee',
     backgroundColor: '#474953',
+    marginHorizontal: 12,
   },
   containerIcon: {
     height: 36,
@@ -42,5 +54,12 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     backgroundColor: '#3d434e',
     marginLeft: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  icon: {
+    color: '#cacaca',
+    height: 16,
+    width: 16,
   },
 });

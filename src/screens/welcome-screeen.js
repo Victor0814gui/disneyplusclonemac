@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#1a1c29',
-    // paddingHorizontal: 71,
   },
   backgroundImage: {
     width: '100%',
@@ -93,8 +92,8 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 71,
+    justifyContent: 'flex-end',
+    padding: 71,
     alignItems: 'flex-start',
   },
   logo: {

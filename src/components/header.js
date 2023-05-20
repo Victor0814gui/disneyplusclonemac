@@ -1,6 +1,6 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {View, Image, Pressable, StyleSheet} from 'react-native';
+import {View, Text, Image, Pressable, StyleSheet} from 'react-native';
 
 import ArrowBackSvg from '../assets/arrow-back.svg';
 
