@@ -4,17 +4,21 @@ import {View, Text, Image, TextInput, StyleSheet} from 'react-native';
 import {ButtonCheckin} from '../components/button-checkin';
 
 import DisneyPlusLogoSvg from '../assets/original.svg';
+import {Toast} from '../components/toast';
+import {Header} from '../components/header';
 
-export function VerificationCodeSession() {
+export function VerificationCodeSession({navigation}) {
   const useRefList = React.useRef([]);
   return (
     <View style={styles.container}>
-      <Image
+      <Header />
+      {/* <Image
         style={styles.logo}
         resizeMode="contain"
         source={DisneyPlusLogoSvg}
-      />
-      <Text style={styles.title}>Confirme o seu email</Text>
+      /> */}
+      <DisneyPlusLogoSvg style={styles.logo} />
+      <Text style={styles.title}>Confirme o seu e-mail</Text>
       <Text style={styles.subtitle}>
         Precisamos verificar seu endereço de email. Enviamos um email para
         {'\n'}asdfdsf@gmail.com com o codigo de 6 digitos que expira em 15
@@ -81,16 +85,21 @@ export function VerificationCodeSession() {
           ref={e => (useRefList.current[5] = e)}
         />
       </View>
-      <View style={{marginTop: 51, marginBottom: 8}}>
-        <ButtonCheckin label="CONTINUAR" />
+      <View style={{width: 320}}>
+        <View style={{marginTop: 51, marginBottom: 8}}>
+          <ButtonCheckin
+            label="CONTINUAR"
+            onPress={() => navigation.navigate('SignInStepTwo')}
+          />
+        </View>
+        <ButtonCheckin
+          defaultColor="#40424a"
+          hoveredColor="#f9f9f9"
+          labelColor="#c6c6c7"
+          labelHoveredColor="#171717"
+          label="REENVIAR E-MAIL"
+        />
       </View>
-      <ButtonCheckin
-        defaultColor="#40424a"
-        hoveredColor="#f9f9f9"
-        labelColor="#c6c6c7"
-        labelHoveredColor="#171717"
-        label="REENVIAR E-MAIL"
-      />
       {/* <Modal/> */}
     </View>
   );
@@ -100,13 +109,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     backgroundColor: '#1a1d27',
   },
   logo: {
     height: 150,
     width: 150,
     maxWidth: '100%',
+    marginTop: 91,
   },
   title: {
     fontSize: 34,

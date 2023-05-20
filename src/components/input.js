@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, TextInput, StyleSheet} from 'react-native';
 import EyeSvg from '../assets/eye.svg';
+import EyeHiddenSvg from '../assets/eye.svg';
 
 import {ButtonCircularDefault} from './button-circular-default';
 
 export function Input({inputDataSecret = false, ...rest}) {
+  const [textSecret, setTextSecret] = React.useState(false);
   return (
     <View style={styles.container}>
       {inputDataSecret && (
@@ -20,10 +22,11 @@ export function Input({inputDataSecret = false, ...rest}) {
         style={styles.input}
         verticalAlign="middle"
         textAlign="center"
-        secureTextEntry={inputDataSecret}
+        secureTextEntry={textSecret}
       />
       {inputDataSecret && (
         <ButtonCircularDefault
+          onPress={() => setTextSecret(!textSecret)}
           defaultColor="#40424a"
           hoveredColor="#f9f9f9"
           labelColor="#c6c6c7"

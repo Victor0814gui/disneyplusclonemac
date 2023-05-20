@@ -8,6 +8,7 @@ import {VerificationCodeSession} from './screens/verification-code-session';
 import {WelcomeScreen} from './screens/welcome-screeen';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import CheckoutSession from './screens/checkout-session';
+import {Toast} from './components/toast';
 
 const Drawer = createDrawerNavigator();
 

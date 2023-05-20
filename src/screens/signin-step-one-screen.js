@@ -46,7 +46,9 @@ export function SignInStepOne({navigation}) {
         <Input placeholder={'digite seu email'} />
       </View>
       <View style={{width: 320, marginTop: 21}}>
-        <ButtonCheckin onPress={() => navigation.navigate('SignInStepTwo')} />
+        <ButtonCheckin
+          onPress={() => navigation.navigate('VerificationCodeSession')}
+        />
       </View>
     </Animated.View>
   );
