@@ -23,7 +23,7 @@ export function Routes() {
           },
         }}>
         <Drawer.Navigator
-          initialRouteName="VideoDetailsContentScreen"
+          initialRouteName="WelcomeScreen"
           screenOptions={{
             headerShown: false,
           }}>
