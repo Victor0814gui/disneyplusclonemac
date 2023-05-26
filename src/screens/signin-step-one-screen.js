@@ -16,11 +16,6 @@ export function SignInStepOne({navigation}) {
       duration: 230,
       useNativeDriver: false, //
     }).start();
-    // Animated.decay(animationScreen, {
-    //   velocity: 1, // velocidade inicial da animação
-    //   deceleration: 0.6, // taxa de desaceleração
-    //   useNativeDriver: false, // executar a animação no thread nativo
-    // }).start(); // i
   };
 
   useEffect(() => {
@@ -30,13 +25,7 @@ export function SignInStepOne({navigation}) {
     <Animated.View
       style={[styles.container, {transform: [{scale: animationScreen}]}]}>
       <Header />
-      {/* <Image
-        style={styles.logo}
-        resizeMode="contain"
-        source={DisneyPlusLogoSvg}
-      /> */}
       <DisneyPlusLogoSvg style={[styles.logo]} />
-
       <Text style={styles.title}>Use o seu e-mail para entrar</Text>
       <Text style={styles.subtitle}>
         Você usara esse email e senha para entrar na conta do Disney+ e assitir
@@ -46,9 +35,7 @@ export function SignInStepOne({navigation}) {
         <Input placeholder={'digite seu email'} />
       </View>
       <View style={{width: 320, marginTop: 21}}>
-        <ButtonCheckin
-          onPress={() => navigation.navigate('VerificationCodeSession')}
-        />
+        <ButtonCheckin onPress={() => navigation.navigate('SignInStepTwo')} />
       </View>
     </Animated.View>
   );

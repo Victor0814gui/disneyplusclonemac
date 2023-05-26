@@ -8,7 +8,8 @@ import {VerificationCodeSession} from './screens/verification-code-session';
 import {WelcomeScreen} from './screens/welcome-screeen';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import CheckoutSession from './screens/checkout-session';
-import {Toast} from './components/toast';
+import {VideoDetailsContentScreen} from './screens/video-details-content-screen';
+import TestScreen from './screens/test-screen';
 
 const Drawer = createDrawerNavigator();
 
@@ -22,7 +23,7 @@ export function Routes() {
           },
         }}>
         <Drawer.Navigator
-          initialRouteName="WelcomeScreen"
+          initialRouteName="VideoDetailsContentScreen"
           screenOptions={{
             headerShown: false,
           }}>
@@ -37,7 +38,18 @@ export function Routes() {
             name="VerificationCodeSession"
             component={VerificationCodeSession}
           />
+          <Drawer.Screen
+            name="VideoDetailsContentScreen"
+            component={VideoDetailsContentScreen}
+          />
           <Drawer.Screen name="CheckoutSession" component={CheckoutSession} />
+          <Drawer.Screen
+            name="TestScreen"
+            options={{
+              headerShown: true,
+            }}
+            component={TestScreen}
+          />
         </Drawer.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>

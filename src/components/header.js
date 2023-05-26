@@ -4,11 +4,20 @@ import {View, Text, Image, Pressable, StyleSheet} from 'react-native';
 
 import ArrowBackSvg from '../assets/arrow-back.svg';
 
-export function Header() {
+export function Header({routeName}) {
   const navigation = useNavigation();
+
+  const onPress = () => {
+    if (!!routeName) {
+      navigation.navigate(routeName);
+    } else {
+      navigation.goBack();
+    }
+  };
+
   return (
     <View style={styles.header}>
-      <Pressable onPress={() => navigation.goBack()}>
+      <Pressable onPress={onPress}>
         <ArrowBackSvg
           style={{
             width: 30,

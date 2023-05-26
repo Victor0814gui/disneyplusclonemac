@@ -26,7 +26,7 @@ export function SignInStepTwo({navigation}) {
   return (
     <Animated.View
       style={[styles.container, {transform: [{scale: animationScreen}]}]}>
-      <Header />
+      <Header routeName={'VerificationCodeSession'} />
 
       {/* <Image
         style={styles.logo}
@@ -47,7 +47,9 @@ export function SignInStepTwo({navigation}) {
         <Input inputDataSecret placeholder="Senha" />
       </View>
       <View style={{width: 320, marginVertical: 8}}>
-        <ButtonCheckin />
+        <ButtonCheckin
+          onPress={() => navigation.navigate('SubsriptionScreen')}
+        />
       </View>
       <View style={{width: 320}}>
         <ButtonCheckin
@@ -56,7 +58,7 @@ export function SignInStepTwo({navigation}) {
           labelColor="#c6c6c7"
           labelHoveredColor="#171717"
           label="ESQUECEU A SENHA?"
-          onPress={() => navigation.navigate('SubsriptionScreen')}
+          onPress={() => navigation.navigate('VerificationCodeSession')}
         />
       </View>
     </Animated.View>

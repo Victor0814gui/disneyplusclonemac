@@ -1,32 +1,30 @@
 import React, {useEffect, useState} from 'react';
 
-import {View, Text, Image, Linking, Animated, StyleSheet} from 'react-native';
+import {View, Text, Linking, StyleSheet} from 'react-native';
 
-import DisneyPlusLogoSvg from '../assets/original.svg';
-import {Input} from '../components/input';
-import {ButtonCheckin} from '../components/button-checkin';
 import DisneyPlusBackgroundRadialGradient from '../assets/background-radial-gradient.svg';
 import {Header} from '../components/header';
-import Svg, {Defs, Path, Circle, RadialGradient, Stop} from 'react-native-svg';
-import {useWindowDimensions} from 'react-native-windows';
+import {Toast} from '../components/toast';
 
 export default function CheckoutSession() {
   const [URLIsOpen, setURLIsOpen] = useState(false);
-  const {height, width} = useWindowDimensions();
+
   useEffect(() => {
     if (!URLIsOpen) {
       Linking.openURL('https://www.disneyplus.com/');
       setURLIsOpen(true);
     }
   }, []);
+
   return (
     <View style={styles.container}>
-      {/* <Header /> */}
+      <Header routeName="WelcomeScreen" />
       {/* <Image
         style={styles.background}
         resizeMode="cover"
         source={DisneyPlusBackgroundRadialGradient}
       /> */}
+      <Toast />
       <DisneyPlusBackgroundRadialGradient style={styles.background} />
       <Text style={styles.title}>
         Conclua a sua assinatura no seu navegador

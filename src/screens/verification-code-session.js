@@ -1,17 +1,31 @@
 import React from 'react';
-import {View, Text, Image, TextInput, StyleSheet} from 'react-native';
-
+import {View, Text, Animated, TextInput, StyleSheet} from 'react-native';
 import {ButtonCheckin} from '../components/button-checkin';
+import {Header} from '../components/header';
 
 import DisneyPlusLogoSvg from '../assets/original.svg';
-import {Toast} from '../components/toast';
-import {Header} from '../components/header';
 
 export function VerificationCodeSession({navigation}) {
   const useRefList = React.useRef([]);
+
+  const animationScreen = React.useRef(new Animated.Value(0.8)).current;
+
+  const animationEnter = () => {
+    Animated.timing(animationScreen, {
+      toValue: 1,
+      duration: 230,
+      useNativeDriver: false, //
+    }).start();
+  };
+
+  React.useEffect(() => {
+    animationEnter();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Header />
+    <Animated.View
+      style={[styles.container, {transform: [{scale: animationScreen}]}]}>
+      <Header routeName={'SignInStepOne'} />
       {/* <Image
         style={styles.logo}
         resizeMode="contain"
@@ -89,7 +103,7 @@ export function VerificationCodeSession({navigation}) {
         <View style={{marginTop: 51, marginBottom: 8}}>
           <ButtonCheckin
             label="CONTINUAR"
-            onPress={() => navigation.navigate('SignInStepTwo')}
+            onPress={() => navigation.navigate('SubsriptionScreen')}
           />
         </View>
         <ButtonCheckin
@@ -101,7 +115,7 @@ export function VerificationCodeSession({navigation}) {
         />
       </View>
       {/* <Modal/> */}
-    </View>
+    </Animated.View>
   );
 }
 

@@ -1,15 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 
-import {
-  View,
-  Text,
-  Image,
-  Pressable,
-  Animated,
-  StyleSheet,
-  TouchableHighlight,
-  ImageBackground,
-} from 'react-native';
+import {View, Text, Image, Animated, StyleSheet} from 'react-native';
 
 import {ButtonCheckin} from '../components/button-checkin';
 import DisneyPlusLogoSvg from '../assets/original.svg';

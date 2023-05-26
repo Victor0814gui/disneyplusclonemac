@@ -42,6 +42,7 @@ export function SubsriptionScreen({navigation}) {
             labelColor="#c6c6c7"
             labelHoveredColor="#171717"
             label="SAIR"
+            onPress={() => navigation.navigate('VideoDetailsContentScreen')}
           />
         </View>
       </View>

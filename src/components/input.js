@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, TextInput, StyleSheet} from 'react-native';
 import EyeSvg from '../assets/eye.svg';
-import EyeHiddenSvg from '../assets/eye.svg';
+import EyeHiddenSvg from '../assets/eye-hidden.svg';
 
 import {ButtonCircularDefault} from './button-circular-default';
 
@@ -11,10 +11,8 @@ export function Input({inputDataSecret = false, ...rest}) {
     <View style={styles.container}>
       {inputDataSecret && (
         <View
-          style={[
-            styles.containerIcon,
-            {backgroundColor: 'transparent'},
-          ]}></View>
+          style={[styles.containerIcon, {backgroundColor: 'transparent'}]}
+        />
       )}
       <TextInput
         {...rest}
@@ -31,7 +29,11 @@ export function Input({inputDataSecret = false, ...rest}) {
           hoveredColor="#f9f9f9"
           labelColor="#c6c6c7"
           labelHoveredColor="#171717">
-          <EyeSvg fill={'#cacaca'} style={styles.icon} />
+          {textSecret ? (
+            <EyeSvg fill={'#cacaca'} style={styles.icon} />
+          ) : (
+            <EyeHiddenSvg fill={'#cacaca'} style={styles.icon} />
+          )}
         </ButtonCircularDefault>
       )}
     </View>
