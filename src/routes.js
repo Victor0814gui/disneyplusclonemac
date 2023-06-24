@@ -10,10 +10,12 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import CheckoutSession from './screens/checkout-session';
 import {VideoDetailsContentScreen} from './screens/video-details-content-screen';
 import TestScreen from './screens/test-screen';
-
+import {enableScreens} from 'react-native-screens';
+import {DragAndDropScreen} from './screens/drag-and-drop';
 const Drawer = createDrawerNavigator();
 
 export function Routes() {
+  enableScreens(true);
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <NavigationContainer
@@ -23,7 +25,7 @@ export function Routes() {
           },
         }}>
         <Drawer.Navigator
-          initialRouteName="WelcomeScreen"
+          initialRouteName="DragAndDropScreen"
           screenOptions={{
             headerShown: false,
           }}>
@@ -49,6 +51,13 @@ export function Routes() {
               headerShown: true,
             }}
             component={TestScreen}
+          />
+          <Drawer.Screen
+            name="DragAndDropScreen"
+            options={{
+              headerShown: true,
+            }}
+            component={DragAndDropScreen}
           />
         </Drawer.Navigator>
       </NavigationContainer>

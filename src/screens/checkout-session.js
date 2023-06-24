@@ -7,18 +7,19 @@ import {Header} from '../components/header';
 import {Toast} from '../components/toast';
 
 export default function CheckoutSession() {
-  const [URLIsOpen, setURLIsOpen] = useState(false);
+  const [URLIsOpen, setURLIsOpen] = useState(true);
 
   useEffect(() => {
-    if (!URLIsOpen) {
+    if (URLIsOpen) {
       Linking.openURL('https://www.disneyplus.com/');
-      setURLIsOpen(true);
+      setURLIsOpen(false);
     }
+
+    return () => setURLIsOpen(false);
   }, []);
 
   return (
     <View style={styles.container}>
-      <Header routeName="WelcomeScreen" />
       {/* <Image
         style={styles.background}
         resizeMode="cover"

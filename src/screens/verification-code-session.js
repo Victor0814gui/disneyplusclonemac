@@ -25,12 +25,6 @@ export function VerificationCodeSession({navigation}) {
   return (
     <Animated.View
       style={[styles.container, {transform: [{scale: animationScreen}]}]}>
-      <Header routeName={'SignInStepOne'} />
-      {/* <Image
-        style={styles.logo}
-        resizeMode="contain"
-        source={DisneyPlusLogoSvg}
-      /> */}
       <DisneyPlusLogoSvg style={styles.logo} />
       <Text style={styles.title}>Confirme o seu e-mail</Text>
       <Text style={styles.subtitle}>

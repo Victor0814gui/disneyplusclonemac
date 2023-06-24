@@ -16,6 +16,13 @@
 
 #include <winrt/Microsoft.ReactNative.h>
 
+// titleBar customization includes
+#include "winrt/Windows.UI.h"
+#include "winrt/Windows.UI.Core.h"
+#include "winrt/Windows.UI.ViewManagement.h"
+#include "winrt/Windows.ApplicationModel.Core.h"
+#include "winrt/Windows.ApplicationModel.Activation.h"
+
 #include <winrt/Microsoft.UI.Xaml.Automation.Peers.h>
 #include <winrt/Microsoft.UI.Xaml.Controls.Primitives.h>
 #include <winrt/Microsoft.UI.Xaml.Controls.h>

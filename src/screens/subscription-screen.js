@@ -9,7 +9,6 @@ import DisneyPlusBackgroundImage from '../assets/subscription-background-image.p
 export function SubsriptionScreen({navigation}) {
   return (
     <View style={styles.container}>
-      {/* <Header /> */}
       <Image
         source={DisneyPlusBackgroundImage}
         resizeMode="cover"

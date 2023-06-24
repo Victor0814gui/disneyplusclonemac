@@ -26,8 +26,6 @@ export function SignInStepTwo({navigation}) {
   return (
     <Animated.View
       style={[styles.container, {transform: [{scale: animationScreen}]}]}>
-      <Header routeName={'VerificationCodeSession'} />
-
       {/* <Image
         style={styles.logo}
         resizeMode="contain"

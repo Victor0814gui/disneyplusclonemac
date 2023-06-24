@@ -24,7 +24,6 @@ export function SignInStepOne({navigation}) {
   return (
     <Animated.View
       style={[styles.container, {transform: [{scale: animationScreen}]}]}>
-      <Header />
       <DisneyPlusLogoSvg style={[styles.logo]} />
       <Text style={styles.title}>Use o seu e-mail para entrar</Text>
       <Text style={styles.subtitle}>

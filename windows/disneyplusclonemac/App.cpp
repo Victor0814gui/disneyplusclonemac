@@ -5,11 +5,15 @@
 #include "AutolinkedNativeModules.g.h"
 #include "ReactPackageProvider.h"
 
+
 using namespace winrt;
 using namespace xaml;
 using namespace xaml::Controls;
 using namespace xaml::Navigation;
 
+using namespace Windows::UI;
+using namespace Windows::UI::ViewManagement;
+using namespace Windows::ApplicationModel::Core;
 using namespace Windows::ApplicationModel;
 namespace winrt::disneyplusclonemac::implementation
 {
@@ -52,6 +56,25 @@ void App::OnLaunched(activation::LaunchActivatedEventArgs const& e)
 {
     super::OnLaunched(e);
 
+
+    auto titleBar = ApplicationView::GetForCurrentView().TitleBar();
+    
+    auto currentView = SystemNavigationManager::GetForCurrentView();
+    currentView.AppViewBackButtonVisibility(AppViewBackButtonVisibility::Visible);
+
+
+    uint8_t buttonAlpha = 255;
+    titleBar.BackgroundColor(ColorHelper::FromArgb(buttonAlpha, 19, 21, 40));
+    titleBar.ForegroundColor(ColorHelper::FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
+
+    titleBar.InactiveBackgroundColor(ColorHelper::FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
+    titleBar.InactiveForegroundColor(ColorHelper::FromArgb(0x00, 0x00, 0x00, 0xA2));
+
+    titleBar.ButtonBackgroundColor(ColorHelper::FromArgb(buttonAlpha, 19, 21, 40));
+    titleBar.ButtonHoverBackgroundColor(ColorHelper::FromArgb(buttonAlpha, 19, 21, 40));
+    titleBar.ButtonPressedBackgroundColor(ColorHelper::FromArgb(buttonAlpha, 232, 211, 162));
+    titleBar.ButtonInactiveBackgroundColor(ColorHelper::FromArgb(buttonAlpha, 135, 141, 199));
+    
     Frame rootFrame = Window::Current().Content().as<Frame>();
     rootFrame.Navigate(xaml_typename<MainPage>(), box_value(e.Arguments()));
 }
@@ -64,6 +87,10 @@ void App::OnActivated(Activation::IActivatedEventArgs const &e) {
   super::OnActivated(e);
   if (!preActivationContent && Window::Current()) {
     Frame rootFrame = Window::Current().Content().as<Frame>();
+    if (rootFrame.CanGoBack())
+    {
+        rootFrame.GoBack();
+    }else{}
     rootFrame.Navigate(xaml_typename<MainPage>(), nullptr);
   }
 }

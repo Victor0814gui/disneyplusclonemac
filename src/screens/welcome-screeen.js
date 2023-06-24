@@ -1,6 +1,13 @@
 import React, {useEffect, useRef} from 'react';
 
-import {View, Text, Image, Animated, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  BackHandler,
+  Image,
+  Animated,
+  StyleSheet,
+} from 'react-native';
 
 import {ButtonCheckin} from '../components/button-checkin';
 import DisneyPlusLogoSvg from '../assets/original.svg';
@@ -20,6 +27,12 @@ export function WelcomeScreen({navigation}) {
 
   useEffect(() => {
     animateEnterScreen();
+
+    const eventsListener = BackHandler.addEventListener(
+      'hardwareBackPress',
+      e => console.log(e),
+    );
+    return () => eventsListener.remove();
   }, []);
   return (
     <Animated.View style={styles.container}>
