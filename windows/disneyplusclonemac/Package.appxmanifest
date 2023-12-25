@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="2144650b-2bc7-4b11-8165-2a7b99849f7d"
+    Name="2583c44c-55d5-43aa-add3-be1b77af56f3"
     Publisher="CN=agcoi"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="2144650b-2bc7-4b11-8165-2a7b99849f7d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="2583c44c-55d5-43aa-add3-be1b77af56f3" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>disneyplusclonemac</DisplayName>

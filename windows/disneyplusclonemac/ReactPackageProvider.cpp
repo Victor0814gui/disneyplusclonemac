@@ -2,7 +2,6 @@
 #include "ReactPackageProvider.h"
 #include "NativeModules.h"
 
-
 using namespace winrt::Microsoft::ReactNative;
 
 namespace winrt::disneyplusclonemac::implementation
@@ -10,7 +9,7 @@ namespace winrt::disneyplusclonemac::implementation
 
 void ReactPackageProvider::CreatePackage(IReactPackageBuilder const &packageBuilder) noexcept
 {
-    AddAttributedModules(packageBuilder);
+    AddAttributedModules(packageBuilder, true);
 }
 
 } // namespace winrt::disneyplusclonemac::implementation
