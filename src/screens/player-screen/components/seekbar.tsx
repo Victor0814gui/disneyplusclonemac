@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     marginVertical: 31
   },
   progress: {
-    backgroundColor: "#f2f2f2",
+    backgroundColor: "#00E676",
     height: 4
   },
   circle: {

@@ -1,17 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { StyleSheet } from "react-native"
 import Video from "react-native-video"
 
 import { ROUTES_NAMES } from "../routes";
 import { Page } from "../components/page";
 
-import SplashVideoMP4 from "../assets/splash.mp4";
-import { titleBar } from "react-native-custom-window";
-import { useFocusEffect } from "@react-navigation/native";
+import SplashScreenVideoMP4 from "../assets/splash.mp4";
 
 
 export const SplashScreen = ({ navigation }: any) => {
   const onEnd = () => {
+    navigation.navigate(ROUTES_NAMES.welcomeScreen)
+  }
+
+  const onError = () => {
     navigation.navigate(ROUTES_NAMES.welcomeScreen)
   }
 
@@ -22,9 +24,11 @@ export const SplashScreen = ({ navigation }: any) => {
         accessible={false}
         playInBackground={false}
         paused={false}
-        source={SplashVideoMP4}
+        source={SplashScreenVideoMP4}
         style={styles.video}
+        controls={false}
         onEnd={onEnd}
+        onError={onError}
         resizeMode="cover"
       />
     </Page>

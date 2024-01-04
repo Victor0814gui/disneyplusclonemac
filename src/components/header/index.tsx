@@ -14,6 +14,9 @@ import { GradientHeader } from "./components/gradient-header";
 
 import DisneyPlusLogoSvg from '../../assets/original.svg';
 import StarSvg from '../../assets/star.svg';
+import HomeSvg from '../../assets/home.svg';
+import MovieSvg from '../../assets/movie.svg';
+import SeriesSvg from '../../assets/series.svg';
 import SearchSvg from '../../assets/search.svg';
 import PlusSvg from '../../assets/plus.svg';
 import { ButtonHeader } from './components/button-header';
@@ -55,7 +58,7 @@ export function Header() {
             label="HOME"
             onPress={handlerNavigateHomeScreen}
             style={styles.headerButton}
-            icon={StarSvg}
+            icon={HomeSvg}
           />
           <ButtonHeader
             label="SEARCH"
@@ -79,13 +82,13 @@ export function Header() {
             label="MOVIES"
             onPress={handlerNavigateMoviesScreen}
             style={styles.headerButton}
-            icon={SearchSvg}
+            icon={MovieSvg}
           />
           <ButtonHeader
             label="SERIES"
             onPress={handlerNavigateSeriesScreen}
             style={styles.headerButton}
-            icon={PlusSvg}
+            icon={SeriesSvg}
           />
         </View>
         <View style={styles.profile}>

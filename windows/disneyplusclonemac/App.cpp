@@ -31,9 +31,9 @@ App::App() noexcept
 #endif
 
 #if _DEBUG
-    InstanceSettings().UseDeveloperSupport(false);
-#else
     InstanceSettings().UseDeveloperSupport(true);
+#else
+    InstanceSettings().UseDeveloperSupport(false);
 #endif
 
     RegisterAutolinkedNativeModulePackages(PackageProviders()); // Includes any autolinked modules
