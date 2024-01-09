@@ -23,10 +23,8 @@ jobs:
       - name: Build disneyplusclonemac Windows x64
         run: |
           yarn install
-          yarn react-native autolink-windows
-          msbuild.exe /r "./windows/disneyplusclonemac.sln"
-          msbuild.exe /p:Configuration="Release" /p:Platform="x64" /m "./windows/disneyplusclonemac.sln"
-
+          yarn react-native autolink-windows --release --arch x64 
+      
       - name: Upload UWP x64
         uses: actions/upload-artifact@v2
         with:
