@@ -18,6 +18,10 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.2
       - name: Setup Node ${{ github.event.inputs.Node_Version }}
         uses: actions/setup-node@v3
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.5
+      - name: Restore NuGet packages
+        run: nuget restore "./windows/disneyplusclonemac.sln"
         with:
           node-version: ${{ github.event.inputs.Node_Version }}
       - name: Build disneyplusclonemac Windows x64
