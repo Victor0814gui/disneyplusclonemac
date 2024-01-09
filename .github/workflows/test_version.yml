@@ -1,0 +1,70 @@
+name: Test RN/BRN Version
+on:
+  workflow_dispatch:
+    inputs:    
+      Node_Version:
+        description: 'Node.js Version (18+ for RN 0.73+)'
+        required: true 
+        type: string
+        default: '18'
+
+jobs:
+  build-windows:
+    runs-on: windows-2019
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2.3.3
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.0.2
+      - name: Setup Node ${{ github.event.inputs.Node_Version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ github.event.inputs.Node_Version }}
+      - name: Build disneyplusclonemac Windows x64
+        run: |
+          npx react-native autolink-windows
+          msbuild.exe /r "./windows/disneyplusclonemac.sln"
+          msbuild.exe /p:Configuration="Release" /p:Platform="x64" /m "./windows/disneyplusclonemac.sln"
+
+      - name: Upload UWP x64
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'WindowsAppx'
+          path: disneyplusclonemac/windows/AppPackages/disneyplusclonemac/disneyplusclonemac.0.0.0_x64_Test/ #disneyplusclonemac_1.0.0.0_x64.appx
+# test jobs not working
+# test-android:
+#   needs: [build-android]
+#   runs-on: macos-latest
+#   steps:
+#   - name: Download APK
+#     uses: actions/download-artifact@v2
+#     with:
+#       name: 'AndroidAPK'
+#       path: ./
+#   - name: Install Android Emulator
+#     run: |
+#       echo Install Android image
+#       echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install "system-images;android-27;default;x86_64"
+#       echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --licenses
+#       echo Create AVD
+#       $ANDROID_HOME/tools/bin/avdmanager create avd -n Pixel_API_27 -d pixel -k "system-images;android-27;default;x86_64"
+#
+#   - name: Start emulator
+#     run: |
+#       echo Start emulator
+#       nohup $ANDROID_HOME/emulator/emulator -avd Pixel_API_27 -gpu host -no-audio -no-boot-anim -camera-back none -camera-front none -qemu -m 2048 2>&1 &
+#       echo Wait for emulator
+#       adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed | tr -d '\r') ]]; do echo "."; sleep 1; done; input keyevent 82'
+#       adb devices
+#       adb install -t ./app-release.apk
+#       echo APK installation done.
+#       adb wait-for-device shell am start -n com.disneyplusclonemac/com.disneyplusclonemac.MainActivity
+#       echo Activity started.
+#       adb wait-for-device shell pidof com.disneyplusclonemac
+#       echo Activity PID
+#       adb wait-for-device shell while [[ -z $(pidof com.disneyplusclonemac | tr -d "\r") ]]; do echo "."; sleep 1; done; input keyevent 82
+#       echo Activity is running. Waiting 10s.
+#       sleep 10
+#       echo Checking it's still alive
+#       if [[ -z "$(pidof com.disneyplusclonemac | tr -d '\r')" ]]; then echo "com.disneyplusclonemac is not running."; exit 1; fi
+#       echo Checks done.
