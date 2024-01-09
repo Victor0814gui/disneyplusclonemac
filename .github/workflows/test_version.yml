@@ -22,7 +22,8 @@ jobs:
           node-version: ${{ github.event.inputs.Node_Version }}
       - name: Build disneyplusclonemac Windows x64
         run: |
-          npx react-native autolink-windows
+          yarn install
+          yarn react-native autolink-windows
           msbuild.exe /r "./windows/disneyplusclonemac.sln"
           msbuild.exe /p:Configuration="Release" /p:Platform="x64" /m "./windows/disneyplusclonemac.sln"
 
