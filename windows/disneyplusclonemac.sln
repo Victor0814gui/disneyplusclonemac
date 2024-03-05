@@ -11,8 +11,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RNSVG", "..\node_modules\re
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReactNativeCustomWindow", "..\node_modules\react-native-custom-window\windows\ReactNativeCustomWindow\ReactNativeCustomWindow.vcxproj", "{63B6AB0F-3C32-4404-9115-5040047B6057}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LottieReactNative", "..\node_modules\lottie-react-native\src\windows\cppwinrt\LottieReactNative.vcxproj", "{E5A7828D-F596-4793-80EC-4C071E575C58}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReactNativeVideoCPP", "..\node_modules\react-native-video\windows\ReactNativeVideoCPP\ReactNativeVideoCPP.vcxproj", "{0D1E54D3-4BE1-4DAF-98BF-124C28C85014}"
 EndProject
 Global
@@ -79,18 +77,6 @@ Global
 		{63B6AB0F-3C32-4404-9115-5040047B6057}.Release|x64.Build.0 = Release|x64
 		{63B6AB0F-3C32-4404-9115-5040047B6057}.Release|x86.ActiveCfg = Release|Win32
 		{63B6AB0F-3C32-4404-9115-5040047B6057}.Release|x86.Build.0 = Release|Win32
-		{E5A7828D-F596-4793-80EC-4C071E575C58}.Debug|ARM64.ActiveCfg = Debug|ARM64
-		{E5A7828D-F596-4793-80EC-4C071E575C58}.Debug|ARM64.Build.0 = Debug|ARM64
-		{E5A7828D-F596-4793-80EC-4C071E575C58}.Debug|x64.ActiveCfg = Debug|x64
-		{E5A7828D-F596-4793-80EC-4C071E575C58}.Debug|x64.Build.0 = Debug|x64
-		{E5A7828D-F596-4793-80EC-4C071E575C58}.Debug|x86.ActiveCfg = Debug|Win32
-		{E5A7828D-F596-4793-80EC-4C071E575C58}.Debug|x86.Build.0 = Debug|Win32
-		{E5A7828D-F596-4793-80EC-4C071E575C58}.Release|ARM64.ActiveCfg = Release|ARM64
-		{E5A7828D-F596-4793-80EC-4C071E575C58}.Release|ARM64.Build.0 = Release|ARM64
-		{E5A7828D-F596-4793-80EC-4C071E575C58}.Release|x64.ActiveCfg = Release|x64
-		{E5A7828D-F596-4793-80EC-4C071E575C58}.Release|x64.Build.0 = Release|x64
-		{E5A7828D-F596-4793-80EC-4C071E575C58}.Release|x86.ActiveCfg = Release|Win32
-		{E5A7828D-F596-4793-80EC-4C071E575C58}.Release|x86.Build.0 = Release|Win32
 		{0D1E54D3-4BE1-4DAF-98BF-124C28C85014}.Debug|ARM64.ActiveCfg = Debug|ARM64
 		{0D1E54D3-4BE1-4DAF-98BF-124C28C85014}.Debug|ARM64.Build.0 = Debug|ARM64
 		{0D1E54D3-4BE1-4DAF-98BF-124C28C85014}.Debug|x64.ActiveCfg = Debug|x64

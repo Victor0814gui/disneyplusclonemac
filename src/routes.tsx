@@ -53,7 +53,7 @@ export function Routes() {
           screenOptions={{
             headerShown: false,
           }}>
-          {/* <Navigator.Screen name={ROUTES_NAMES.splashScreen} component={SplashScreen} /> */}
+          <Navigator.Screen name={ROUTES_NAMES.splashScreen} component={SplashScreen} />
           <Navigator.Screen name={ROUTES_NAMES.welcomeScreen} component={WelcomeScreen} />
           <Navigator.Screen name={ROUTES_NAMES.signInStepOne} component={SignInStepOne} />
           <Navigator.Screen name={ROUTES_NAMES.signInStepTwo} component={SignInStepTwo} />
